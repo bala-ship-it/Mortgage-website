@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mortgage Services - Balaji Palani</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Background Video Section -->
+    <div class="video-background">
+        <video autoplay muted loop id="background-video">
+            <source src="videos/v1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Top Left Image (i1.jpg) -->
+    <div class="top-left-image">
+        <img src="images/i1.jpg" alt="Logo" class="top-image">
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Your Mortgage Services</h1>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+            <a href="#social-media">Follow Me</a>
+        </nav>
+    </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p class="intro-text">Hi, I'm <span class="highlight">Balaji Palani</span>, a licensed mortgage agent in
+            Ontario, helping clients achieve their homeownership dreams.</p>
+        <p class="intro-text">You can reach me at <span class="highlight">416-768-0193</span></p>
+
+        <!-- Business Card Image -->
+        <div class="business-card-container">
+            <img src="images/business-card-2.png" alt="Business Card" class="business-card">
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p class="service-text">Providing top-notch mortgage services to help you achieve your homeownership goals.</p>
+        <ul>
+            <li>First-time homebuyer mortgages</li>
+            <li>Refinancing options</li>
+            <li>Investment property loans</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+    </section>
+
+    <!-- Social Media Section -->
+    <section id="social-media">
+        <h2>Follow Me</h2>
+        <div class="social-links">
+            <a href="https://www.instagram.com/balaji_mortgageagent/" target="_blank"
+                class="social-icon instagram">Instagram</a>
+            <a href="https://www.youtube.com/@Firebender365" target="_blank" class="social-icon youtube">YouTube</a>
+            <a href="https://www.linkedin.com/in/balaji-palani-aa704428b/" target="_blank"
+                class="social-icon linkedin">LinkedIn</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Balaji Palani. All rights reserved.</p>
+        <p class="music-credit">Music by Josef Surikov from <a href="https://pixabay.com" target="_blank">Pixabay</a>
+        </p>
+    </footer>
+
+    <!-- User Interaction Message -->
+    <div id="music-message" style="
+        position: fixed;
+        bottom: 20px;
+        width: 100%;
+        text-align: center;
+        font-size: 14px;
+        color: #555;
+        background-color: rgba(255, 255, 255, 0.8);
+        padding: 10px;
+        z-index: 1000;">
+        Click anywhere on the page for a pleasant music experience 🎶
+    </div>
+
+    <!-- Background Music Script -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const playMusic = () => {
+                const audio = new Audio('audio/music.mp3');
+                audio.loop = true;
+                audio.play();
+
+                // Remove the interaction message
+                const message = document.getElementById('music-message');
+                if (message) message.style.display = 'none';
+            };
+
+            // Add the event listener for first interaction
+            document.body.addEventListener('click', playMusic, { once: true });
+        });
+    </script>
+
+    <!-- Link to JavaScript -->
+    <script src="script.js"></script>
+</body>
+
+</html>
