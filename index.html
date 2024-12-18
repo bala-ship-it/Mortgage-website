@@ -63,7 +63,9 @@
         <!-- Netlify Form Integration -->
         <form name="contact" method="POST" data-netlify="true" netlify>
             <input type="hidden" name="form-name" value="contact">
-            
+            <p hidden>
+                <label>Don’t fill this out: <input name="bot-field" /></label>
+            </p>
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
