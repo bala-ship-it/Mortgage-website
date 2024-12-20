@@ -47,7 +47,7 @@ header {
     padding: 3em;
     background-color: rgba(0, 0, 0, 0.7);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    position: sticky; /* Make the header sticky */
+    position: sticky;
     top: 0;
     z-index: 1000;
 }
@@ -159,8 +159,9 @@ header nav a:focus {
     color: #f8f8f8;
 }
 
-#contact input, 
-#contact textarea {
+#contact input,
+#contact textarea,
+#contact select {
     width: 100%;
     padding: 0.8em;
     margin-bottom: 1em;
@@ -170,8 +171,9 @@ header nav a:focus {
     color: #333;
 }
 
-#contact input:focus, 
-#contact textarea:focus {
+#contact input:focus,
+#contact textarea:focus,
+#contact select:focus {
     outline: none;
     box-shadow: 0 0 5px #ff6347;
 }
