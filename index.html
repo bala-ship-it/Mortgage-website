@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mortgage Services - Balaji Palani</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Add EmailJS Library -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 </head>
 
 <body>
@@ -36,8 +38,8 @@
     <!-- About Section -->
     <section id="about">
         <h2>About Me</h2>
-        <p class="intro-text">Hi, I'm <span class="highlight">Balaji Palani</span>, a licensed mortgage agent in
-            Ontario, helping clients achieve their homeownership dreams.</p>
+        <p class="intro-text">Hi, I'm <span class="highlight">Balaji Palani</span>, a licensed mortgage agent in Ontario,
+            helping clients achieve their homeownership dreams.</p>
         <p class="intro-text">You can reach me at <span class="highlight">416-768-0193</span></p>
 
         <!-- Business Card Image -->
@@ -57,22 +59,10 @@
         </ul>
     </section>
 
-    <!-- Dummy Hidden Form for Netlify Detection -->
-    <form name="contact" netlify hidden>
-        <input type="hidden" name="form-name" value="contact">
-        <input type="text" name="name">
-        <input type="email" name="email">
-        <textarea name="message"></textarea>
-    </form>
-
     <!-- Contact Section -->
     <section id="contact">
         <h2>Contact Me</h2>
-        <form name="contact" method="POST" data-netlify="true">
-            <input type="hidden" name="form-name" value="contact">
-            <p hidden>
-                <label>Don’t fill this out: <input name="bot-field" /></label>
-            </p>
+        <form name="contact">
             <label for="name">Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -136,7 +126,7 @@
         });
     </script>
 
-    <!-- Link to JavaScript -->
+    <!-- Link to Custom JavaScript -->
     <script src="script.js"></script>
 </body>
 
