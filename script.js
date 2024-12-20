@@ -1,6 +1,3 @@
-// Initialize EmailJS with your Public Key
-emailjs.init("fyRrgXBLB1OSnMGLK");
-
 document.addEventListener("DOMContentLoaded", function () {
     const form = document.querySelector("form[name='contact']");
     const responseDiv = document.createElement("div");
@@ -11,26 +8,36 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (e) {
         e.preventDefault(); // Prevent the default form submission
 
-        // Collect form data
-        const formData = {
-            name: document.getElementById("name").value,
-            email: document.getElementById("email").value,
-            message: document.getElementById("message").value,
-        };
+        // Show a loading message
+        responseDiv.textContent = "Sending...";
+        responseDiv.style.color = "blue";
 
-        // Send the form data using EmailJS
-        emailjs
-            .send("officialbalaji98", "template_qwh41uq", formData) // Replace with your Service ID and Template ID
-            .then(() => {
-                // Success feedback
-                responseDiv.textContent = "Thank you! Your message has been sent successfully.";
-                responseDiv.style.color = "green";
-                form.reset(); // Reset the form
+        // Create FormData object
+        const formData = new FormData(form);
+
+        // Send data to Formspree
+        fetch("https://formspree.io/f/xbljnzoa", {
+            method: "POST",
+            body: formData,
+            headers: {
+                Accept: "application/json",
+            },
+        })
+            .then((response) => {
+                if (response.ok) {
+                    // Success feedback
+                    responseDiv.textContent = "Thank you! Your message has been sent successfully.";
+                    responseDiv.style.color = "green";
+                    form.reset(); // Reset the form
+                } else {
+                    // Error feedback
+                    responseDiv.textContent = "Oops! Something went wrong. Please try again later.";
+                    responseDiv.style.color = "red";
+                }
             })
             .catch((error) => {
-                // Error feedback
-                console.error("EmailJS Error: ", error);
-                responseDiv.textContent = "Oops! Something went wrong. Please try again later.";
+                console.error("Formspree Error:", error);
+                responseDiv.textContent = "An unexpected error occurred. Please try again later.";
                 responseDiv.style.color = "red";
             });
     });
